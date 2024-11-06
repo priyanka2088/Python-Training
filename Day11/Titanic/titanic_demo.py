@@ -1,6 +1,6 @@
 import pandas as pd
 
-data=pd.read_csv(r"C:\Users\Administrator\Documents\UST Training\Python-Training\Titanic\titanic.csv")
+data=pd.read_csv(r"C:\Users\Administrator\Documents\UST Training\Python-Training\Day11\Titanic\titanic.csv")
 # print(data.head())
 # print(data['Age'].head())
 
@@ -14,9 +14,9 @@ data=pd.read_csv(r"C:\Users\Administrator\Documents\UST Training\Python-Training
 
 #print(data['Age'].mean())
 
-# df=data[(data["Sex"]=='male') & (data['Age']<25)]
-# print(df.mean())
+df=data[(data["Sex"]=='male') & (data['Age']<25)]
+print(df['Fare'].mean())
 
-# df.to_csv("filtered_titaniv.csv",index=False)
+df.to_csv("filtered_titaniv.csv",index=False)
 
-print(len(data[data['Survived']==1].index)/len(data.index) * 100)
+#print(len(data[data['Survived']==1].index)/len(data.index) * 100)
