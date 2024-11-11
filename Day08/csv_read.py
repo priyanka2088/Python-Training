@@ -14,7 +14,7 @@ def datagetter(file_handle,college_name_param):
         if college_name not in counts:
             counts[college_name]=1
         else:
-            counts[college_name]=+1
+            counts[college_name]+=1
 
     print(counts)    
 
