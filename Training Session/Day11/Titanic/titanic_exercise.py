@@ -12,8 +12,11 @@ data['family_size']=data['SibSp']+data['Parch']
 print(data[['SibSp','Parch','family_size']].head())
 
 data1=data.groupby(['family_size'])['Survived'].mean().reset_index()
-data1.columns=['famil_size','family_survival_rate']
+#data1.columns=['famil_size','family_survival_rate']
+print(data1.columns)
+
+data1=data1.rename({'Survived':'New_Survival_Rate'},axis='columns')
 print(data1)
 
 
-print(pd.merge(data,data1,on='family_size',how='left'))
+print(pd.merge(data,data1,on='family_size',how='left').head(10))
